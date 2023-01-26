@@ -1,16 +1,21 @@
-export const App = () => {
-  return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
-  );
-};
+import React, {Component} from "react";
+
+export class App extends Component{
+   state = {
+    name: ''
+  };
+  handleNameChange = event => {
+    console.dir(event.currentTarget);
+    this.setState({name: event.currentTarget.value})
+  }
+
+    render(){
+      return (
+      <form>
+        <label htmlFor="">
+         Имя <input type="text" value={this.state.name} onChange={this.handleNameChange} />
+        </label>
+      </form>
+)
+    }
+  ;}
