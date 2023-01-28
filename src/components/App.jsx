@@ -1,21 +1,10 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
+import { LoginForm } from "./LoginForm/LoginForm";
 
-export class App extends Component{
-   state = {
-    name: ''
-  };
-  handleNameChange = event => {
-    console.dir(event.currentTarget);
-    this.setState({name: event.currentTarget.value})
+export class App extends Component {
+  render() {
+    return (
+      <LoginForm/>
+    )
   }
-
-    render(){
-      return (
-      <form>
-        <label htmlFor="">
-         Имя <input type="text" value={this.state.name} onChange={this.handleNameChange} />
-        </label>
-      </form>
-)
-    }
-  ;}
+}
